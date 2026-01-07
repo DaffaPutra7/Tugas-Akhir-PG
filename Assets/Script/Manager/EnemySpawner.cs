@@ -3,9 +3,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public float spawnInterval = 2f; // Muncul tiap 2 detik
+    public float spawnInterval = 2f; 
 
-    // Area muncul (X) agar acak kiri-kanan
     public float xLimit = 2.5f;
 
     void Start()

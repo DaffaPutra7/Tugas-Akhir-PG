@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
 
     [Header("Pengaturan Menembak")]
-    public GameObject bulletPrefab; // Masukkan Prefab Bullet kesini
-    public Transform firePoint;     // Titik keluarnya peluru (Opsional, pakai posisi player juga bisa)
+    public GameObject bulletPrefab; 
+    public Transform firePoint;    
 
     [Header("Komponen")]
     public Rigidbody2D rb;
@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        // 2. INPUT MENEMBAK (Spasi)
+        // 2. INPUT MENEMBAK 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
@@ -44,8 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Shoot()
     {
-        // PENTING UNTUK UCP: Instantiate (Memunculkan object)
-        // Parameter: (Apa yang dimunculkan, Dimana posisinya, Rotasinya gimana)
+        // Instantiate (Memunculkan object)
         Instantiate(bulletPrefab, transform.position, bulletPrefab.transform.rotation);
     }
 
