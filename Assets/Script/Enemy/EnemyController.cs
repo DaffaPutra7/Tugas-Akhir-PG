@@ -21,16 +21,24 @@ public class EnemyController : MonoBehaviour
             ScoreManager scoreManager = FindFirstObjectByType<ScoreManager>();
             if (scoreManager != null)
             {
-                scoreManager.AddScore(10); 
+                scoreManager.AddScore(10);
             }
 
-            Destroy(other.gameObject); 
-            Destroy(gameObject);      
+            Destroy(other.gameObject);
+            Destroy(gameObject);     
         }
+
         else if (other.CompareTag("Player"))
         {
+            GameOverManager gm = FindFirstObjectByType<GameOverManager>();
+            if (gm != null)
+            {
+                gm.TriggerGameOver();
+            }
+
+            Destroy(other.gameObject);
+
             Destroy(gameObject);
-            Debug.Log("GAME OVER!");
         }
     }
 }
